@@ -1,0 +1,5 @@
+selain->palvelin: HTTP POST https://fullstack-exampleapp.herokuapp.com/new_note_spa
+
+note:
+palvelin vastaa statuskoodilla 201. Tapahtumankäsittelijä ei kuitenkaan lataa sivua uudelleen vaan lisää vain lähetetyn viestin aikaisempien viestien listaan
+ja renderöi sen näytölle.
