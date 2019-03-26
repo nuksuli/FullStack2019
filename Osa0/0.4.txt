@@ -1,0 +1,17 @@
+selain->palvelin: HTTP POST https://fullstack-exampleapp.herokuapp.com/new_note
+palvelin->selain: HTTP-statuskoodi 302
+
+note:
+selain lähettää viestin palvelimelle ja palvelin vastaa HTTP-koodilla, joka kehottaa selainta tekemään uuden HTTP GET -pyynnön
+
+selain->palvelin: HTTP GET https://fullstack-exampleapp.herokuapp.com/notes
+palvelin->selain: HTTP-koodi
+selain->palvelin: HTTP GET https://fullstack-exampleapp.herokuapp.com/main.css
+palvelin->selain: main.css
+selain->palvelin: HTTP GET https://fullstack-exampleapp.herokuapp.com/main.js
+palvelin->selain: main.js
+selain->palvelin: HTTP GET https://fullstack-exampleapp.herokuapp.com/data.json
+palvelin->selain: data.json
+
+note:
+tapahtumankäsittelijä renderöi päivitetyt muistiinpanot ruudulle
