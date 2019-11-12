@@ -121,15 +121,15 @@ const App = () => {
         personService
           .update(changedPerson.id, changedPerson).then(returnedPerson => {
             setPersons(persons.map(p => p.id !== returnedPerson.id ? p : returnedPerson))
-              .catch(error => {
-                setType('deleteNotification')
-                setMessage(`${personToupdate.name} is already deleted from the server`)
-                setTimeout(() => {
-                  setMessage(null)
-                  setType(null)
-                  return;
-                })
-              })
+          })
+          .catch(error => {
+            setType('deleteNotification')
+            setMessage(`${personToupdate.name} is already deleted from the server`)
+            setTimeout(() => {
+              setMessage(null)
+              setType(null)
+              return;
+            })
           }
           )
         setMessage(`Number for ${personToupdate.name} has been updated!`)
